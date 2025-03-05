@@ -10,30 +10,29 @@ const port = process.env.PORT || 3001;
 const static_path = path.join(__dirname, "../public");
 const views_path = path.join(__dirname, "../templates/views");
 const partials_path = path.join(__dirname, "../templates/partials");
-const baseUrl = "/Bloom_Together";
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.use(baseUrl, express.static(static_path));
+app.use(express.static(static_path));
 
 app.set("view engine", "hbs");
 app.set("views", views_path);
 hbs.registerPartials(partials_path);
 
-app.get(`${baseUrl}/`, (req, res) => {
+app.get("/", (req, res) => {
     res.render("main");
 });
 
-app.get(`${baseUrl}/women`, (req, res) => {
+app.get("/women", (req, res) => {
     res.render("index");
 });
 
-app.get(`${baseUrl}/lgbtq`, (req, res) => {
+app.get("/lgbtq", (req, res) => {
     res.render("Lindex");
 });
 
-app.post(`${baseUrl}/appointment`, async (req, res) => {
+app.post("/appointment", async (req, res) => {
     try {
         const { name, number, email, time, messages, source } = req.body;
 
@@ -64,7 +63,7 @@ app.post(`${baseUrl}/appointment`, async (req, res) => {
 });
 
 // Subscription Route
-app.post(`${baseUrl}/subscribe`, (req, res) => {
+app.post("/subscribe", (req, res) => {
     const { email } = req.body;
 
     const transporter = nodemailer.createTransport({
@@ -95,5 +94,5 @@ app.post(`${baseUrl}/subscribe`, (req, res) => {
 
 // Start Server
 app.listen(port, () => {
-    console.log(`Server is running at http://localhost:${port}${baseUrl}`);
+    console.log(`Server is running at http://localhost:${port}`);
 });
