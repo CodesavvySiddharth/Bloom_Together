@@ -1,15 +1,8 @@
 {
     "version": 2,
-    "builds": [
-        { "src": "src/index.js", "use": "@vercel/node" }
-    ],
+    "builds": [{ "src": "src/index.js", "use": "@vercel/node" }],
     "routes": [
         { "src": "/static/(.*)", "dest": "/public/$1" },
-        { "src": "/Bloom_Together/women", "dest": "/src/index.js" },
-        { "src": "/Bloom_Together/lgbtq", "dest": "/src/index.js" },
-        { "src": "/Bloom_Together/appointment", "dest": "/src/index.js" },
-        { "src": "/Bloom_Together/subscribe", "dest": "/src/index.js" },
-        { "src": "/Bloom_Together/(.*)", "dest": "/src/index.js" },
         { "src": "/(.*)", "dest": "/src/index.js" }
     ]
 }

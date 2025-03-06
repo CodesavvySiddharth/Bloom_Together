@@ -1,15 +1,15 @@
 {
   "name": "Bloom Together",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A platform for women and LGBTQ+ community",
+  "main": "src/index.js",
   "engines": {
     "node": "18.x"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node src/index.js",
-    "dev": "nodemon -e js,hbs src"
+    "dev": "nodemon -e js,hbs src",
+    "build": "echo 'No build step needed'"
   },
   "keywords": [],
   "author": "Codesavvy",
