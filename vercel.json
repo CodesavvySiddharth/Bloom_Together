@@ -3,6 +3,10 @@
     "builds": [{ "src": "src/index.js", "use": "@vercel/node" }],
     "routes": [
         { "src": "/static/(.*)", "dest": "/public/$1" },
+        { "src": "/women", "dest": "/src/index.js" },
+        { "src": "/lgbtq", "dest": "/src/index.js" },
+        { "src": "/appointment", "dest": "/src/index.js" },
+        { "src": "/subscribe", "dest": "/src/index.js" },
         { "src": "/(.*)", "dest": "/src/index.js" }
     ]
 }
